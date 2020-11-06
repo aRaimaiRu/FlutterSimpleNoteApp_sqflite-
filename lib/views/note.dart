@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:noteapp/inherited_widget/note_inherited_widget.dart';
 import 'package:noteapp/provider/provider.dart';
+import 'schedule_option.dart';
 
 enum NoteMode { Editing, Adding }
 
@@ -16,6 +17,7 @@ class Note extends StatefulWidget {
 class _NoteState extends State<Note> {
   final TextEditingController _titleController = TextEditingController();
   final TextEditingController _textController = TextEditingController();
+  bool isSun = false;
 
   // List<Map<String, String>> get _notes => NoteInheritedWidget.of(context).notes;
 
@@ -80,7 +82,9 @@ class _NoteState extends State<Note> {
                   Navigator.pop(context);
                 }),
               ],
-            )
+            ),
+            Text("Notfication"),
+            Notfication_optionlist(),
           ],
         ),
       ),
